@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "FruitList";
+}
+
+<h2>FruitList</h2>
+
+<form action="/Fruit/CreateNew" method="post" enctype="multipart/form-data">
+    <button type="submit" class="btn btn-success">Create New</button>
+</form>
+
+<table class="table table-bordered table-striped text-center">
+    <tr>
+        <td>Fruit ID</td>
+        <td>Fruit Name</td>
+        <td>Fruit Image</td>
+        <td>Change</td>
+        <td>Remove</td>
+    </tr>
+
+    @foreach(var fruit in ViewBag.Fruits) 
+        { 
+            <tr>
+                <td>@fruit.Id</td>
+                <td>@fruit.FruitName</td>
+                <td><img src="~/Content/Image/Fruit/@fruit.FruitImage" height="50px"></td>
+                <td>
+                    <button type="button" class="btn btn-danger" onclick="location.href =
+                    '/Fruit/editFruit/?ID=@fruit.Id'">Change</button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-danger" onclick="location.href =
+                    '/Fruit/deleteFruit/?ID=@fruit.Id'">Delete</button>
+                </td>
+            </tr>
+        }
+</table>
+

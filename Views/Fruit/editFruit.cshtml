@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "editFruit";
+}
+
+<h2>Update Fruit</h2>
+
+<form action="/Fruit/editFruitSave" method="post" enctype="multipart/form-data">
+
+    Fruit Name <br />
+    <input type="text" name="FruitName" id="FruitName" value="@ViewBag.fruit.FruitName" class="rounded" /> <br /> <br />
+
+    <input type="file" name="photo" id="photo" value="Browse Picture" />
+
+    <input type="hidden" id="Id" name="Id" value="@ViewBag.fruit.Id" />
+    <br />
+
+
+    <button type="reset" class="btn-info rounded">Clear</button>
+    <button type="submit" class="btn-info rounded">Update Fruit</button>
+
+</form>

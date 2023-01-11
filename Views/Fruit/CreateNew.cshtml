@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "CreateNew";
+}
+
+<h2>Create New Fruit</h2>
+
+<form action="/Fruit/saveNewFruit" method="post" enctype="multipart/form-data">
+
+    Fruit Name <br />
+    <input type="text" name="FruitName" id="FruitName" required placeholder="Fruit Name" class="rounded" /> <br /> <br />
+
+    <input type="file" name="photo" id="photo" value="Browse Picture" />
+
+    <button type="reset" class="btn-info rounded">Clear</button>
+    <button type="submit" class="btn-info rounded">Create New Fruit</button>
+
+</form>
